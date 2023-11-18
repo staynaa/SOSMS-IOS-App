@@ -33,6 +33,7 @@
 		872AB4782B07299800B2C52A /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872AB4772B07299800B2C52A /* ProfileViewViewModel.swift */; };
 		872AB47A2B0729AF00B2C52A /* ContactEditViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872AB4792B0729AF00B2C52A /* ContactEditViewViewModel.swift */; };
 		872AB47C2B0729C500B2C52A /* NewContactViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872AB47B2B0729C500B2C52A /* NewContactViewViewModel.swift */; };
+		873C7AD92B086FE9006DD445 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7AD82B086FE9006DD445 /* InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		872AB4772B07299800B2C52A /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		872AB4792B0729AF00B2C52A /* ContactEditViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditViewViewModel.swift; sourceTree = "<group>"; };
 		872AB47B2B0729C500B2C52A /* NewContactViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewViewModel.swift; sourceTree = "<group>"; };
+		873C7AD82B086FE9006DD445 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				872AB4662B07275900B2C52A /* ProfileView.swift */,
 				872AB4682B07279900B2C52A /* ContactEditView.swift */,
 				872AB46C2B07285600B2C52A /* NewContactView.swift */,
+				873C7AD82B086FE9006DD445 /* InputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				872AB47C2B0729C500B2C52A /* NewContactViewViewModel.swift in Sources */,
 				872AB46B2B0727C000B2C52A /* User.swift in Sources */,
 				872AB46D2B07285600B2C52A /* NewContactView.swift in Sources */,
+				873C7AD92B086FE9006DD445 /* InputView.swift in Sources */,
 				872AB47A2B0729AF00B2C52A /* ContactEditViewViewModel.swift in Sources */,
 				872AB4722B07296200B2C52A /* ManageContactsViewViewModel.swift in Sources */,
 				872AB4742B07297400B2C52A /* LoginViewViewModel.swift in Sources */,

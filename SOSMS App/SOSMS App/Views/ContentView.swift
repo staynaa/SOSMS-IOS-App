@@ -12,10 +12,14 @@ struct ContentView: View {
         NavigationView {
             VStack{
                 // app logo image can go here
+                Text("SOSMS")
+                    .font(.title)
+                
                 Text("Alert those close to you with a click of a button").padding()
                 
                 NavigationLink(
-                    destination: SignupView(),
+                    destination: SignupView()
+                        .navigationBarBackButtonHidden(),
                     label: {
                         Text("Create An Account")
                             .frame(width:305, height: 74, alignment: .center)
@@ -26,13 +30,13 @@ struct ContentView: View {
                     })
                 
                 NavigationLink(
-                    destination: LoginView(),
+                    destination: LoginView()
+                        .navigationBarBackButtonHidden(),
                     label: {
                         Text("Already Have An Account? Login Here.")
                         
                     })
-            }.navigationTitle("Welcome To SOSMS")
-                .navigationBarTitleDisplayMode(.inline)
+            }
             // LoginView()
         }
     }
