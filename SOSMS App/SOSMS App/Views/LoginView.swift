@@ -9,31 +9,36 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject private var viewMod = LoginViewViewModel()
-//    @State private var email = ""
-//    @State private var password = ""
     
     var body: some View {
         NavigationStack{
             VStack{
-                //login form
-                VStack(spacing: 30){
-                    InputView(text: $viewMod.email ,
-                              title: "Email Address",
-                              placeholder: "name@example.com")
-                    .autocapitalization(.none)
-                    
-                    InputView(text: $viewMod.password ,
-                              title: "Password",
-                              placeholder: "Enter Your Password",
-                              isSecureField : true)
-                }
-                .padding(.horizontal)
                 if !viewMod.errorMsg.isEmpty{
                     Text(viewMod.errorMsg)
                         .fontWeight(.bold)
                         .font(.system(size: 14))
                         .foregroundColor(Color.red)
                 }
+                //login form
+                VStack(spacing: 50){
+                    TextField("Enter Email Address", text: $viewMod.email)
+                        .padding()
+                        .frame(width: 313, height: 48)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: CGFloat(viewMod.wrongEmail))
+                        )
+                    SecureField("Enter Password", text: $viewMod.password)
+                        .padding()
+                        .frame(width: 313, height: 48)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: CGFloat(viewMod.wrongPW))
+                        )
+                }
+                .padding(.horizontal)
                 Button{viewMod.login()}label:{
                     HStack {
                         Text("LOGIN")
@@ -46,7 +51,7 @@ struct LoginView: View {
                 .cornerRadius(10)
                 .padding(.top, 30)
                 
-                Spacer()
+                // Spacer()
                 
                 NavigationLink(
                     destination: SignupView()

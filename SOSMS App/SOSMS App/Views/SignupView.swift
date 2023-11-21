@@ -8,35 +8,61 @@
 import SwiftUI
 
 struct SignupView: View {
-    @State private var email = ""
-    @State private var fullname = ""
-    @State private var password = ""
-    @State private var confirmPassword = ""
+    @ObservedObject private var viewMod = SignupViewViewModel()
+    
     var body: some View {
         NavigationStack{
             VStack{
+                if !viewMod.errorMsg.isEmpty{
+                    Text(viewMod.errorMsg)
+                        .fontWeight(.bold)
+                        .font(.system(size: 14))
+                        .foregroundColor(Color.red)
+                }
                 VStack(spacing: 30){
-                    InputView(text: $fullname,
-                              title: "Full Name",
-                              placeholder: "Enter Your Full Name")
-                    
-                    InputView(text: $email ,
-                              title: "Email Address",
-                              placeholder: "name@example.com")
-                    .autocapitalization(.none)
-                    
-                    InputView(text: $password ,
-                              title: "Password",
-                              placeholder: "Enter Your Password",
-                              isSecureField : true)
-                    InputView(text: $confirmPassword ,
-                              title: "Confirm Password",
-                              placeholder: "Re-Enter Password To Confirm",
-                              isSecureField : true)
+                    TextField("Enter Full Name", text: $viewMod.fullname)
+                        .padding()
+                        .frame(width: 313, height: 48)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: CGFloat(viewMod.nameErr))
+                        )
+                    TextField("Enter Email Address", text: $viewMod.email)
+                        .padding()
+                        .frame(width: 313, height: 48)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: CGFloat(viewMod.emailErr))
+                        )
+                    SecureField("Enter Password", text: $viewMod.password)
+                        .padding()
+                        .frame(width: 313, height: 48)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: CGFloat(viewMod.pwErr))
+                        )
+                    SecureField("Confirm Password", text: $viewMod.confirmPassword)
+                        .padding()
+                        .frame(width: 313, height: 48)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: CGFloat(viewMod.notConfirmed))
+                        )
                 }
                 .padding(.horizontal)
-                
-                Button{}label:{
+                if !viewMod.errorMsgPW.isEmpty{
+                    Text(viewMod.errorMsg)
+                        .fontWeight(.bold)
+                        .font(.system(size: 14))
+                        .foregroundColor(Color.red)
+                }
+                Button{
+                    viewMod.signup()
+                }label:{
                     HStack {
                         Text("SIGN UP")
                             .fontWeight(.semibold)
