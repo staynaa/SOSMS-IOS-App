@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewMod = ContentViewViewModel()
     var body: some View {
         NavigationView {
+            if viewMod.isLogged, !viewMod.currentUser.isEmpty{
+                AlertView()
+            }
             VStack{
                 // app logo image can go here
                 Text("SOSMS")

@@ -19,6 +19,12 @@ struct SignupView: View {
                         .font(.system(size: 14))
                         .foregroundColor(Color.red)
                 }
+                if !viewMod.errorMsgPW.isEmpty{
+                    Text(viewMod.errorMsg)
+                        .fontWeight(.bold)
+                        .font(.system(size: 14))
+                        .foregroundColor(Color.red)
+                }
                 VStack(spacing: 30){
                     TextField("Enter Full Name", text: $viewMod.fullname)
                         .padding()
@@ -44,22 +50,8 @@ struct SignupView: View {
                         .overlay(RoundedRectangle(cornerRadius: 10)
                             .stroke(.red, lineWidth: CGFloat(viewMod.pwErr))
                         )
-                    SecureField("Confirm Password", text: $viewMod.confirmPassword)
-                        .padding()
-                        .frame(width: 313, height: 48)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .overlay(RoundedRectangle(cornerRadius: 10)
-                            .stroke(.red, lineWidth: CGFloat(viewMod.notConfirmed))
-                        )
                 }
                 .padding(.horizontal)
-                if !viewMod.errorMsgPW.isEmpty{
-                    Text(viewMod.errorMsg)
-                        .fontWeight(.bold)
-                        .font(.system(size: 14))
-                        .foregroundColor(Color.red)
-                }
                 Button{
                     viewMod.signup()
                 }label:{

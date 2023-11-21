@@ -34,6 +34,9 @@
 		872AB47A2B0729AF00B2C52A /* ContactEditViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872AB4792B0729AF00B2C52A /* ContactEditViewViewModel.swift */; };
 		872AB47C2B0729C500B2C52A /* NewContactViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872AB47B2B0729C500B2C52A /* NewContactViewViewModel.swift */; };
 		873C7AD92B086FE9006DD445 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7AD82B086FE9006DD445 /* InputView.swift */; };
+		873C7ADB2B0D6328006DD445 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7ADA2B0D6327006DD445 /* Extensions.swift */; };
+		873C7ADD2B0D724F006DD445 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7ADC2B0D724F006DD445 /* AlertView.swift */; };
+		873C7ADF2B0D726E006DD445 /* AlertViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7ADE2B0D726E006DD445 /* AlertViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		872AB4792B0729AF00B2C52A /* ContactEditViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditViewViewModel.swift; sourceTree = "<group>"; };
 		872AB47B2B0729C500B2C52A /* NewContactViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewViewModel.swift; sourceTree = "<group>"; };
 		873C7AD82B086FE9006DD445 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		873C7ADA2B0D6327006DD445 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		873C7ADC2B0D724F006DD445 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		873C7ADE2B0D726E006DD445 /* AlertViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,7 @@
 				872AB4682B07279900B2C52A /* ContactEditView.swift */,
 				872AB46C2B07285600B2C52A /* NewContactView.swift */,
 				873C7AD82B086FE9006DD445 /* InputView.swift */,
+				873C7ADC2B0D724F006DD445 /* AlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 				872AB4772B07299800B2C52A /* ProfileViewViewModel.swift */,
 				872AB4792B0729AF00B2C52A /* ContactEditViewViewModel.swift */,
 				872AB47B2B0729C500B2C52A /* NewContactViewViewModel.swift */,
+				873C7ADE2B0D726E006DD445 /* AlertViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 				872AB4252B06F12100B2C52A /* Assets.xcassets */,
 				872AB4512B06F9B300B2C52A /* GoogleService-Info.plist */,
 				872AB4212B06F11C00B2C52A /* SOSMS_AppApp.swift */,
+				873C7ADA2B0D6327006DD445 /* Extensions.swift */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -356,6 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				872AB4242B06F11C00B2C52A /* ContentView.swift in Sources */,
+				873C7ADD2B0D724F006DD445 /* AlertView.swift in Sources */,
+				873C7ADB2B0D6328006DD445 /* Extensions.swift in Sources */,
 				872AB4762B07298600B2C52A /* SignupViewViewModel.swift in Sources */,
 				872AB4602B07271100B2C52A /* ManageContactsView.swift in Sources */,
 				872AB4622B07272800B2C52A /* LoginView.swift in Sources */,
@@ -363,6 +374,7 @@
 				872AB47C2B0729C500B2C52A /* NewContactViewViewModel.swift in Sources */,
 				872AB46B2B0727C000B2C52A /* User.swift in Sources */,
 				872AB46D2B07285600B2C52A /* NewContactView.swift in Sources */,
+				873C7ADF2B0D726E006DD445 /* AlertViewViewModel.swift in Sources */,
 				873C7AD92B086FE9006DD445 /* InputView.swift in Sources */,
 				872AB47A2B0729AF00B2C52A /* ContactEditViewViewModel.swift in Sources */,
 				872AB4722B07296200B2C52A /* ManageContactsViewViewModel.swift in Sources */,
