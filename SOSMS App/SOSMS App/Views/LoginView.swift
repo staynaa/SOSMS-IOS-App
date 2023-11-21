@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var viewMod = LoginViewViewModel()
+    @ObservedObject private var viewMod = LoginViewViewModel()
 //    @State private var email = ""
 //    @State private var password = ""
     
@@ -28,8 +28,12 @@ struct LoginView: View {
                               isSecureField : true)
                 }
                 .padding(.horizontal)
-                .padding(.vertical)
-                
+                if !viewMod.errorMsg.isEmpty{
+                    Text(viewMod.errorMsg)
+                        .fontWeight(.bold)
+                        .font(.system(size: 14))
+                        .foregroundColor(Color.red)
+                }
                 Button{viewMod.login()}label:{
                     HStack {
                         Text("LOGIN")
@@ -55,12 +59,6 @@ struct LoginView: View {
                         }
                         .font(.system(size: 14))
                     })
-                if !viewMod.errorMsg.isEmpty{
-                    Text(viewMod.errorMsg)
-                        .fontWeight(.bold)
-                        .font(.system(size: 14))
-                        .foregroundColor(Color.red)
-                }
                 
             }
         }
