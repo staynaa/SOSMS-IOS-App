@@ -6,3 +6,7 @@
 //
 
 import Foundation
+class ManageContactsViewViewModel : ObservableObject{
+    @Published var showNewContView = false;
+    
+}
