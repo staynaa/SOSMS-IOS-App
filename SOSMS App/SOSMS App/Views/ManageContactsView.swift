@@ -9,7 +9,20 @@ import SwiftUI
 
 struct ManageContactsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        Text("MANAGE YOUR CONTACTS")
+        NavigationView{
+            VStack{
+                
+            }
+            .navigationTitle("Manage Contacts")
+            .toolbar{
+                Button{
+                    
+                }label:{
+                    Image(systemName: "plus.circle")
+                }
+            }
+        }
     }
 }
 
