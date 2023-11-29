@@ -9,7 +9,7 @@ import FirebaseFirestore
 import Foundation
 class ProfileViewViewModel: ObservableObject{
     @Published var user: User? = nil
-    @Published var email: String = ""
+    // @Published var email: String = ""
     init(){}
     func getUser(){
         guard let userID = Auth.auth().currentUser?.uid else{

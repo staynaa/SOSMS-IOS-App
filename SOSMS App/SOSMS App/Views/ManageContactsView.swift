@@ -4,16 +4,24 @@
 //
 //  Created by Stayna Alexandre on 11/16/23.
 //
-
+import FirebaseFirestoreSwift
 import SwiftUI
 
 struct ManageContactsView: View {
     @StateObject var viewMod = ManageContactsViewViewModel()
+    @FirestoreQuery var contacts: [EmergencyContact]
+    
+    init(userID: String) {
+        self._contacts = FirestoreQuery(collectionPath: "users/\(userID)/emergency_contacts")
+    }
+    
     var body: some View {
-//        Text("MANAGE YOUR CONTACTS")
         NavigationView{
             VStack{
-                
+                List(contacts) { cont in
+                    ContactObjectView(cont: cont)
+                }
+                .listStyle(PlainListStyle())
             }
             .navigationTitle("Manage Contacts")
             .toolbar{
@@ -24,12 +32,12 @@ struct ManageContactsView: View {
                 }
             }
             .sheet(isPresented: $viewMod.showNewContView) {
-                NewContactView()
+                NewContactView(showcontact: $viewMod.showNewContView)
             }
         }
     }
 }
 
 #Preview {
-    ManageContactsView()
+    ManageContactsView(userID: "GE8qGAX254UBZMoz9hOkImyCWFj1")
 }

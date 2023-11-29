@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewContactView: View {
     @StateObject var viewMod = NewContactViewViewModel()
+    @Binding var showcontact: Bool
     var body: some View {
         VStack{
             Text("Add An Emergency Contact")
@@ -41,15 +42,30 @@ struct NewContactView: View {
                     .stroke(.black, lineWidth: CGFloat(1))
                 )
             Button{
+                if viewMod.canAdd {
                     viewMod.addCont()
-                }label:{
+                    showcontact = false
+                } else {
+                    viewMod.errorMsg = true
+                }
+            }label:{
                     Text("Add Contact")
                         .foregroundStyle(.green)
                 }
+        }
+        .alert( isPresented: $viewMod.errorMsg){
+            Alert(title: 
+                    Text("Error"),
+                  message: 
+                    Text("Make sure all fields are entered correctly. No dashes or spaces when entering a phone number."))
         }
     }
 }
 
 #Preview {
-    NewContactView()
+    NewContactView(showcontact: Binding(get: {
+        return true
+    }, set: { _ in
+        
+    }))
 }

@@ -8,32 +8,46 @@
 import SwiftUI
 
 struct ContactObjectView: View {
+    let cont: EmergencyContact
     var body: some View {
-        ZStack{
+        VStack(alignment: .leading){
             HStack{
-                Text("Contact Name")
+                Text(cont.contName)
                     .fontWeight(.black)
-                Text("Relationship")
+                Text(cont.relation)
                     .fontWeight(.semibold)
                     .foregroundStyle(.gray)
-                    .toolbar{
-                        Button{}label:{
-                            Image(systemName: "pencil")
-                        }
-                    }
-                    .toolbar{
-                        Button{}label:{
-                            Image(systemName: "person.crop.circle.badge.minus")
-                        }
-                    }
             }
-            Text("+12223334444")
+            Text(cont.contNumber)
+                .fontWeight(.regular)
                 .fontWeight(.medium)
-            Divider()
+            //Divider()
         }
+//        ZStack{
+//            HStack{
+//                Text("Contact Name")
+//                    .fontWeight(.black)
+//                Text("Relationship")
+//                    .fontWeight(.semibold)
+//                    .foregroundStyle(.gray)
+//                    .toolbar{
+//                        Button{}label:{
+//                            Image(systemName: "pencil")
+//                        }
+//                    }
+//                    .toolbar{
+//                        Button{}label:{
+//                            Image(systemName: "person.crop.circle.badge.minus")
+//                        }
+//                    }
+//            }
+//            Text("+12223334444")
+//                .fontWeight(.medium)
+//            Divider()
+//        }
     }
 }
 
 #Preview {
-    ContactObjectView()
+    ContactObjectView(cont: .init(id: "contact id", contName: "contact name", contNumber: "contact number", relation: "contact relation", active: true))
 }
