@@ -15,6 +15,7 @@ class ProfileViewViewModel: ObservableObject{
         guard let userID = Auth.auth().currentUser?.uid else{
             return
         }
+        print("in get user of profile")
         let db = Firestore.firestore()
         db.collection("users").document(userID).getDocument { [weak self] snapshot, error in
             guard let data = snapshot?.data(), error == nil else {

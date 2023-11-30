@@ -16,17 +16,53 @@ class LoginViewViewModel: ObservableObject{
     
     init(){}
     // function is called when user clicks login button
+//    func login() {
+//        errorMsg = ""
+//        wrongEmail=0
+//        wrongPW=0
+//        //check that the inputs aren't empty and dont contain spaces
+//        guard validate() else{
+//            return
+//        }
+//        print("Called")
+//        Auth.auth().signIn(withEmail: email, password: password)
+//    }
     func login() {
         errorMsg = ""
-        wrongEmail=0
-        wrongPW=0
-        //check that the inputs aren't empty and dont contain spaces
-        guard validate() else{
+        wrongEmail = 0
+        wrongPW = 0
+
+        // Check that the inputs aren't empty and don't contain spaces
+        guard validate() else {
             return
         }
-        print("Called")
-        Auth.auth().signIn(withEmail: email, password: password)
+
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+            guard let strongSelf = self else { return }
+
+            if let error = error as NSError? {
+                // Handle sign-in errors here
+                let errorCode = error.code
+
+                switch errorCode {
+                case AuthErrorCode.wrongPassword.rawValue:
+                    strongSelf.wrongPW = 3
+                    strongSelf.errorMsg = "Incorrect password. Please try again."
+                case AuthErrorCode.userNotFound.rawValue, AuthErrorCode.invalidEmail.rawValue:
+                    strongSelf.wrongEmail = 3
+                    strongSelf.errorMsg = "User not found or invalid email."
+                default:
+                    strongSelf.errorMsg = "Login failed due to technical issues. Please try again later."
+                }
+            } else {
+                // Sign-in successful, you can access the user data from `result.user`
+                print("Sign-in successful")
+            }
+        }
     }
+
+
+
     func validate() -> Bool{
         guard !email.trimmingCharacters(in: .whitespaces).isEmpty, !password.trimmingCharacters(in: .whitespaces).isEmpty else{
             wrongPW = 3

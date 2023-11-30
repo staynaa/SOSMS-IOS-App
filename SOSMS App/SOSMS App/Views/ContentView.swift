@@ -22,7 +22,7 @@ struct ContentView: View {
                         .tabItem{
                             Label("Profile", systemImage: "person.fill")
                         }
-                    ManageContactsView(userID: "GE8qGAX254UBZMoz9hOkImyCWFj1")
+                    ManageContactsView()
                         .tabItem{
                             Label("Manage Contacts", systemImage: "person.crop.circle.badge.plus")
                         }

@@ -4,22 +4,31 @@
 //
 //  Created by Stayna Alexandre on 11/16/23.
 //
-import FirebaseFirestoreSwift
 import SwiftUI
 
 struct ManageContactsView: View {
-    @StateObject var viewMod = ManageContactsViewViewModel()
-    @FirestoreQuery var contacts: [EmergencyContact]
-    
-    init(userID: String) {
-        self._contacts = FirestoreQuery(collectionPath: "users/\(userID)/emergency_contacts")
-    }
+    @ObservedObject var viewMod = ManageContactsViewViewModel()
+//    @FirestoreQuery var contacts: [EmergencyContact]
+//    
+//    init(userID: String) {
+//        self._contacts = FirestoreQuery(collectionPath: "users/\(userID)/emergency_contacts")
+//    }
     
     var body: some View {
         NavigationView{
             VStack{
-                List(contacts) { cont in
+                List(viewMod.contacts) { cont in
                     ContactObjectView(cont: cont)
+                        .swipeActions {
+                            Button("Delete"){
+                                
+                            }
+                            .tint(.red)
+                            Button("Edit"){
+                                
+                            }
+                            .tint(.blue)
+                        }
                 }
                 .listStyle(PlainListStyle())
             }
@@ -34,10 +43,13 @@ struct ManageContactsView: View {
             .sheet(isPresented: $viewMod.showNewContView) {
                 NewContactView(showcontact: $viewMod.showNewContView)
             }
+        }.onAppear {
+            // Call the getUser function when the view appears
+            viewMod.getUser()
         }
     }
 }
 
 #Preview {
-    ManageContactsView(userID: "GE8qGAX254UBZMoz9hOkImyCWFj1")
+    ManageContactsView()
 }
