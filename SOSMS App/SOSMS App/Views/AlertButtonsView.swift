@@ -10,7 +10,7 @@ import SwiftUI
 struct AlertButtonsView: View {
     let buttonTitle: String
     let buttonDesc: String
-//    let color: Color
+    let color: Color
     
     
     var body: some View {
@@ -19,17 +19,17 @@ struct AlertButtonsView: View {
                 
             } label:{
                 Text("Hold")
-//                    .onLongPressGesture(minimumDuration: 0.2, perform: <#T##() -> Void#>)
+                //                    .onLongPressGesture(minimumDuration: 0.2, perform: <#T##() -> Void#>)
                     .frame(width: 100, height: 100)
                     .foregroundColor(Color.white)
-                    .background(Color.red)
+                    .background(color)
                     .clipShape(Circle())
             }
             VStack(alignment: .leading) {
                 Text(buttonTitle)
-                    //.font(.title)
+                //.font(.title)
                     .fontWeight(.bold)
-                    .foregroundStyle(.red)
+                    .foregroundStyle(color)
                     .font(.system(size: 20))
                 Text(buttonDesc)
                     .font(.system(size: 12))
@@ -48,5 +48,5 @@ struct AlertButtonsView: View {
 }
 
 #Preview {
-    AlertButtonsView(buttonTitle: "Preview Button", buttonDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim, nulla non condimentum imperdiet, nulla.")
+    AlertButtonsView(buttonTitle: "Preview Button", buttonDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim, nulla non condimentum imperdiet, nulla.", color: .blue)
 }
