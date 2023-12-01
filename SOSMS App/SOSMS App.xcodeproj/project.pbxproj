@@ -39,6 +39,7 @@
 		873C7ADF2B0D726E006DD445 /* AlertViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7ADE2B0D726E006DD445 /* AlertViewViewModel.swift */; };
 		873C7AE12B0DA91D006DD445 /* ContactObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7AE02B0DA91D006DD445 /* ContactObjectView.swift */; };
 		873C7AE32B169897006DD445 /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7AE22B169897006DD445 /* EmergencyContact.swift */; };
+		87A6A6D22B192AF500AB34C8 /* AlertButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6A6D12B192AF500AB34C8 /* AlertButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		873C7ADE2B0D726E006DD445 /* AlertViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewViewModel.swift; sourceTree = "<group>"; };
 		873C7AE02B0DA91D006DD445 /* ContactObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactObjectView.swift; sourceTree = "<group>"; };
 		873C7AE22B169897006DD445 /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContact.swift; sourceTree = "<group>"; };
+		87A6A6D12B192AF500AB34C8 /* AlertButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				873C7AD82B086FE9006DD445 /* InputView.swift */,
 				873C7ADC2B0D724F006DD445 /* AlertView.swift */,
 				873C7AE02B0DA91D006DD445 /* ContactObjectView.swift */,
+				87A6A6D12B192AF500AB34C8 /* AlertButtonsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				872AB46B2B0727C000B2C52A /* User.swift in Sources */,
 				872AB46D2B07285600B2C52A /* NewContactView.swift in Sources */,
 				873C7ADF2B0D726E006DD445 /* AlertViewViewModel.swift in Sources */,
+				87A6A6D22B192AF500AB34C8 /* AlertButtonsView.swift in Sources */,
 				873C7AD92B086FE9006DD445 /* InputView.swift in Sources */,
 				872AB47A2B0729AF00B2C52A /* ContactEditViewViewModel.swift in Sources */,
 				872AB4722B07296200B2C52A /* ManageContactsViewViewModel.swift in Sources */,
