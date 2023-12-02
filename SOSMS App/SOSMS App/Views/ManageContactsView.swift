@@ -8,44 +8,48 @@ import SwiftUI
 
 struct ManageContactsView: View {
     @ObservedObject var viewMod = ManageContactsViewViewModel()
-//    @FirestoreQuery var contacts: [EmergencyContact]
-//    
-//    init(userID: String) {
-//        self._contacts = FirestoreQuery(collectionPath: "users/\(userID)/emergency_contacts")
-//    }
+    //    @FirestoreQuery var contacts: [EmergencyContact]
+    //
+    //    init(userID: String) {
+    //        self._contacts = FirestoreQuery(collectionPath: "users/\(userID)/emergency_contacts")
+    //    }
     
     var body: some View {
         NavigationView{
-            VStack{
-                List(viewMod.contacts) { cont in
-                    ContactObjectView(cont: cont)
-                        .swipeActions {
-                            Button("Delete"){
-                                
+            ZStack{
+                Color(red: 240/255, green: 240/255, blue: 240/255)
+                    .ignoresSafeArea()
+                VStack{
+                    List(viewMod.contacts) { cont in
+                        ContactObjectView(cont: cont)
+                            .swipeActions {
+                                Button("Delete"){
+                                    
+                                }
+                                .tint(.red)
+                                Button("Edit"){
+                                    
+                                }
+                                .tint(.blue)
                             }
-                            .tint(.red)
-                            Button("Edit"){
-                                
-                            }
-                            .tint(.blue)
-                        }
+                    }
+                    .listStyle(PlainListStyle())
                 }
-                .listStyle(PlainListStyle())
-            }
-            .navigationTitle("Manage Contacts")
-            .toolbar{
-                Button{
-                    viewMod.showNewContView = true
-                }label:{
-                    Image(systemName: "plus.circle")
+                .navigationTitle("Manage Contacts")
+                .toolbar{
+                    Button{
+                        viewMod.showNewContView = true
+                    }label:{
+                        Image(systemName: "plus.circle")
+                    }
                 }
+                .sheet(isPresented: $viewMod.showNewContView) {
+                    NewContactView(showcontact: $viewMod.showNewContView)
+                }
+            }.onAppear {
+                // Call the getUser function when the view appears
+                viewMod.getUser()
             }
-            .sheet(isPresented: $viewMod.showNewContView) {
-                NewContactView(showcontact: $viewMod.showNewContView)
-            }
-        }.onAppear {
-            // Call the getUser function when the view appears
-            viewMod.getUser()
         }
     }
 }
