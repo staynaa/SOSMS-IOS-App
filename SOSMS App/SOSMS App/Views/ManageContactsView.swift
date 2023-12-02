@@ -4,27 +4,51 @@
 //
 //  Created by Stayna Alexandre on 11/16/23.
 //
-
 import SwiftUI
 
 struct ManageContactsView: View {
-    @StateObject var viewMod = ManageContactsViewViewModel()
+    @ObservedObject var viewMod = ManageContactsViewViewModel()
+    //    @FirestoreQuery var contacts: [EmergencyContact]
+    //
+    //    init(userID: String) {
+    //        self._contacts = FirestoreQuery(collectionPath: "users/\(userID)/emergency_contacts")
+    //    }
+    
     var body: some View {
-//        Text("MANAGE YOUR CONTACTS")
         NavigationView{
-            VStack{
-                
-            }
-            .navigationTitle("Manage Contacts")
-            .toolbar{
-                Button{
-                    viewMod.showNewContView = true
-                }label:{
-                    Image(systemName: "plus.circle")
+            ZStack{
+                Color(red: 240/255, green: 240/255, blue: 240/255)
+                    .ignoresSafeArea()
+                VStack{
+                    List(viewMod.contacts) { cont in
+                        ContactObjectView(cont: cont)
+                            .swipeActions {
+                                Button("Delete"){
+                                    
+                                }
+                                .tint(.red)
+                                Button("Edit"){
+                                    
+                                }
+                                .tint(.blue)
+                            }
+                    }
+                    .listStyle(PlainListStyle())
                 }
-            }
-            .sheet(isPresented: $viewMod.showNewContView) {
-                NewContactView()
+                .navigationTitle("Manage Contacts")
+                .toolbar{
+                    Button{
+                        viewMod.showNewContView = true
+                    }label:{
+                        Image(systemName: "plus.circle")
+                    }
+                }
+                .sheet(isPresented: $viewMod.showNewContView) {
+                    NewContactView(showcontact: $viewMod.showNewContView)
+                }
+            }.onAppear {
+                // Call the getUser function when the view appears
+                viewMod.getUser()
             }
         }
     }

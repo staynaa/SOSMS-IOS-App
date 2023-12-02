@@ -33,11 +33,13 @@
 		872AB4782B07299800B2C52A /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872AB4772B07299800B2C52A /* ProfileViewViewModel.swift */; };
 		872AB47A2B0729AF00B2C52A /* ContactEditViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872AB4792B0729AF00B2C52A /* ContactEditViewViewModel.swift */; };
 		872AB47C2B0729C500B2C52A /* NewContactViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872AB47B2B0729C500B2C52A /* NewContactViewViewModel.swift */; };
-		873C7AD92B086FE9006DD445 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7AD82B086FE9006DD445 /* InputView.swift */; };
 		873C7ADB2B0D6328006DD445 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7ADA2B0D6327006DD445 /* Extensions.swift */; };
 		873C7ADD2B0D724F006DD445 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7ADC2B0D724F006DD445 /* AlertView.swift */; };
 		873C7ADF2B0D726E006DD445 /* AlertViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7ADE2B0D726E006DD445 /* AlertViewViewModel.swift */; };
 		873C7AE12B0DA91D006DD445 /* ContactObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7AE02B0DA91D006DD445 /* ContactObjectView.swift */; };
+		873C7AE32B169897006DD445 /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873C7AE22B169897006DD445 /* EmergencyContact.swift */; };
+		87A6A6D22B192AF500AB34C8 /* AlertButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6A6D12B192AF500AB34C8 /* AlertButtonsView.swift */; };
+		87A6A6D42B1ACE8800AB34C8 /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6A6D32B1ACE8800AB34C8 /* AlertMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,11 +85,13 @@
 		872AB4772B07299800B2C52A /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		872AB4792B0729AF00B2C52A /* ContactEditViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditViewViewModel.swift; sourceTree = "<group>"; };
 		872AB47B2B0729C500B2C52A /* NewContactViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewViewModel.swift; sourceTree = "<group>"; };
-		873C7AD82B086FE9006DD445 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		873C7ADA2B0D6327006DD445 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		873C7ADC2B0D724F006DD445 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		873C7ADE2B0D726E006DD445 /* AlertViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewViewModel.swift; sourceTree = "<group>"; };
 		873C7AE02B0DA91D006DD445 /* ContactObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactObjectView.swift; sourceTree = "<group>"; };
+		873C7AE22B169897006DD445 /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContact.swift; sourceTree = "<group>"; };
+		87A6A6D12B192AF500AB34C8 /* AlertButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonsView.swift; sourceTree = "<group>"; };
+		87A6A6D32B1ACE8800AB34C8 /* AlertMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,9 +190,10 @@
 				872AB4662B07275900B2C52A /* ProfileView.swift */,
 				872AB4682B07279900B2C52A /* ContactEditView.swift */,
 				872AB46C2B07285600B2C52A /* NewContactView.swift */,
-				873C7AD82B086FE9006DD445 /* InputView.swift */,
 				873C7ADC2B0D724F006DD445 /* AlertView.swift */,
 				873C7AE02B0DA91D006DD445 /* ContactObjectView.swift */,
+				87A6A6D12B192AF500AB34C8 /* AlertButtonsView.swift */,
+				87A6A6D32B1ACE8800AB34C8 /* AlertMessageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				872AB46A2B0727C000B2C52A /* User.swift */,
+				873C7AE22B169897006DD445 /* EmergencyContact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,13 +379,15 @@
 				873C7ADB2B0D6328006DD445 /* Extensions.swift in Sources */,
 				872AB4762B07298600B2C52A /* SignupViewViewModel.swift in Sources */,
 				872AB4602B07271100B2C52A /* ManageContactsView.swift in Sources */,
+				873C7AE32B169897006DD445 /* EmergencyContact.swift in Sources */,
 				872AB4622B07272800B2C52A /* LoginView.swift in Sources */,
 				872AB4222B06F11C00B2C52A /* SOSMS_AppApp.swift in Sources */,
 				872AB47C2B0729C500B2C52A /* NewContactViewViewModel.swift in Sources */,
 				872AB46B2B0727C000B2C52A /* User.swift in Sources */,
 				872AB46D2B07285600B2C52A /* NewContactView.swift in Sources */,
+				87A6A6D42B1ACE8800AB34C8 /* AlertMessageView.swift in Sources */,
 				873C7ADF2B0D726E006DD445 /* AlertViewViewModel.swift in Sources */,
-				873C7AD92B086FE9006DD445 /* InputView.swift in Sources */,
+				87A6A6D22B192AF500AB34C8 /* AlertButtonsView.swift in Sources */,
 				872AB47A2B0729AF00B2C52A /* ContactEditViewViewModel.swift in Sources */,
 				872AB4722B07296200B2C52A /* ManageContactsViewViewModel.swift in Sources */,
 				872AB4742B07297400B2C52A /* LoginViewViewModel.swift in Sources */,
